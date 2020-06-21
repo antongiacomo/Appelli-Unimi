@@ -7,7 +7,7 @@ import Block from "./Block";
 function App() {
   const [data, setData] = useState([]);
   const [title, setTitle] = useState([""]);
-  const [filter, setFilter] = useState(["Casa"]);
+  const [filter, setFilter] = useState(["Casa","a","b","c","d","e","f","g"]);
 
   useEffect(() => {
     var config = {
@@ -42,8 +42,9 @@ function App() {
 
   return (
     <div className="">
-      <div className="w-full h-10 px-4 my-6">
+      <div className="w-full h-10 px-8 my-6">
         <input
+        placeholder="Search..."
           className="w-full  h-full border py-2 px-4 rounded-lg shadow"
           onChange={(event) =>
             setTitle(event.target.value.toLowerCase().split("&"))
@@ -57,10 +58,10 @@ function App() {
           }}
         />
       </div>
-      <div className="m-8">
+      <div className="flex px-8 flex-wrap space-x-2">
         {filter.map((f) => {
           return (
-            <span className="rounded-full py-2 px-4 mx-2 bg-gray-300">
+            <span key={f} className="rounded-full py-2 px-4 my-2 bg-gray-300 hover:shadow-md hover:translate-x-1">
               {f}{" "}
               <span
                 className="ml-1 border cursor-pointer"
@@ -78,13 +79,13 @@ function App() {
         })}
       </div>
 
-      <div className="flex flex-wrap p-3">
+      <div className="flex flex-wrap p-4">
         {data
           .filter((item) => clear(item))
           .map((item) => {
             return (
               <div
-                className="lg:w-1/4 md:w-1/3 sm:w-1/2 w-full p-3 relative"
+                className="lg:w-1/4 md:w-1/3 sm:w-1/2 w-full p-4 relative"
                 key={item.codW4}
               >
                 <div className="border w-full h-full p-4 rounded-lg shadow">

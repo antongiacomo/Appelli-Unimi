@@ -14,7 +14,7 @@ function Block({ item }) {
   return (
     <div className="flex flex-wrap ">
       {item.appelli.map((appello) => (
-        <div className="w-full bg-gray-200 mr-1 my-1 p-2 rounded-lg ">
+        <div key={appello.idAppello} className="w-full bg-gray-200 mr-1 my-1 p-2 rounded-lg hover:shadow-md hover:translate-x-1">
           <div
             className={
               moment().diff(appello.chiusura, "days") > 0
