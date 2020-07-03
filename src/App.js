@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./tailwind.generated.css";
+import { useStorageState } from 'react-storage-hooks';
 import Block from "./Block";
 
 //
 function App() {
   const [data, setData] = useState([]);
   const [title, setTitle] = useState([""]);
-  const [filter, setFilter] = useState(["Casa","a","b","c","d","e","f","g"]);
+  const [filter, setFilter] = useStorageState(
+    localStorage,
+    'filters',
+    []
+  );
 
   useEffect(() => {
     var config = {
@@ -26,8 +31,9 @@ function App() {
     fetchData();
   }, []);
 
-  function clear(item) {
-    var set = [...title, ...filter];
+  function clear(item,filterOnly = false) {
+    var atitle = filterOnly ? [] : title
+    var set = [...atitle, ...filter];
 
     var result = set.map((element) => {
       return (
@@ -42,10 +48,10 @@ function App() {
 
   return (
     <div className="">
-      <div className="w-full h-10 px-8 my-6">
+      <div className="w-full px-8 py-6 sticky bg-white z-50 bg-white top-0">
         <input
         placeholder="Search..."
-          className="w-full  h-full border py-2 px-4 rounded-lg shadow"
+          className="w-full  h-full border py-2 px-4 rounded-lg shadow bg-white"
           onChange={(event) =>
             setTitle(event.target.value.toLowerCase().split("&"))
           }
@@ -82,13 +88,19 @@ function App() {
       <div className="flex flex-wrap p-4">
         {data
           .filter((item) => clear(item))
+          .sort((a, b) => false - clear(a,true))
           .map((item) => {
             return (
               <div
                 className="lg:w-1/4 md:w-1/3 sm:w-1/2 w-full p-4 relative"
                 key={item.codW4}
+
               >
-                <div className="border w-full h-full p-4 rounded-lg shadow">
+
+                <div className="relative border w-full h-full p-4 rounded-lg shadow overflow-hidden z-40">
+
+                 { clear(item,true) && <div className="absolute bg-indigo-600 w-6 h-8 z-30 transform rotate-45" style={{ top: '-0.75rem' , left: '-0.75rem'}}></div>}
+
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
