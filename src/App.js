@@ -3,7 +3,8 @@ import axios from "axios";
 import "./tailwind.generated.css";
 import { useStorageState } from 'react-storage-hooks';
 import Block from "./Block";
-
+//import Corsi from "./corsi.json"
+//import Select from 'react-select'
 //
 function App() {
   const [data, setData] = useState([]);
@@ -49,6 +50,7 @@ function App() {
   return (
     <div className="">
       <div className="w-full px-8 py-6 sticky bg-white z-50 bg-white top-0">
+
         <input
         placeholder="Search..."
           className="w-full  h-full border py-2 px-4 rounded-lg shadow bg-white"
@@ -63,6 +65,10 @@ function App() {
             }
           }}
         />
+         {/* <Select options={Corsi} /> */}
+      </div>
+      <div>
+
       </div>
       <div className="flex px-8 flex-wrap space-x-2">
         {filter.map((f) => {
@@ -120,7 +126,7 @@ function App() {
                     </svg>
                   </a>
 
-                  <p className="font-medium text-lg mb-1">{item.descrIns}</p>
+                  <p className="font-medium text-lg mb-1 cursor-pointer hover:underline" onClick={ () => setFilter([...(new Set([...filter, item.descrIns.toLowerCase()]))])}>{item.descrIns}</p>
                   <p className="text-sm mb-5">
                     {item.appelli[0].docente.nome}{" "}
                     {item.appelli[0].docente.cognome}
