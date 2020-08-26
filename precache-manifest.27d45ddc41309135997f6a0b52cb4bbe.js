@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "33cd4c5d34f65140995bf89d0a939bda",
+    "revision": "5f939af15873b1b7d45f6838566c9c96",
     "url": "/Appelli-Unimi/index.html"
   },
   {
-    "revision": "4f2ed0229351c3966142",
-    "url": "/Appelli-Unimi/static/css/main.ce062861.chunk.css"
+    "revision": "da6c2936f6903112a5d5",
+    "url": "/Appelli-Unimi/static/css/main.9ab230c6.chunk.css"
   },
   {
     "revision": "b004bdc450ff8fd02c4e",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Appelli-Unimi/static/js/2.3ae8fc5e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4f2ed0229351c3966142",
+    "revision": "da6c2936f6903112a5d5",
     "url": "/Appelli-Unimi/static/js/main.cf655f88.chunk.js"
   },
   {
