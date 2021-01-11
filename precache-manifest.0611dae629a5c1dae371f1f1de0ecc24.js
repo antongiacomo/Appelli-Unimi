@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4878285a6b99ac2cba848e208515f5e2",
+    "revision": "28d4bedb3dc75d0d7a63113e0f77a350",
     "url": "/Appelli-Unimi/index.html"
   },
   {

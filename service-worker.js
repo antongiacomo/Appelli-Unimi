@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Appelli-Unimi/precache-manifest.037eef44f85ff85e65b9c1878b0c17db.js"
+  "/Appelli-Unimi/precache-manifest.0611dae629a5c1dae371f1f1de0ecc24.js"
 );
 
 self.addEventListener('message', (event) => {
