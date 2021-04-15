@@ -1,5 +1,5 @@
 
-const fetch = require('axios');
+const axios = require('axios');
 
 exports.handler = async (event, context) => {
   try{
