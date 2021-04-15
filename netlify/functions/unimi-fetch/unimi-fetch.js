@@ -1,9 +1,10 @@
-const fetch = require('node-fetch');
+
+const fetch = require('axios');
 
 exports.handler = async (event, context) => {
   try{
 
-    const response = await fetch(`https://work.unimi.it/foProssimiEsami/json/F94/`);
+    const response = await axios(`https://work.unimi.it/foProssimiEsami/json/F94/`);
     const data     = await response.json();
 
     return {
