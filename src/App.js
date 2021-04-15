@@ -22,7 +22,7 @@ function App() {
 
     const fetchData = async () => {
       const result = await axios(
-        "https://cors-anywhere.herokuapp.com/https://work.unimi.it/foProssimiEsami/json/F94",
+        "https://gallant-chandrasekhar-55ebf7.netlify.app/.netlify/functions/unimi-fetch",
         config
       );
 
