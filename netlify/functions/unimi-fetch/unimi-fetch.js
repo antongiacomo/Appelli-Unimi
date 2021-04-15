@@ -5,7 +5,7 @@ exports.handler = async (event, context) => {
   try{
 
     const response = await axios(`https://work.unimi.it/foProssimiEsami/json/F94/`);
-    const data     = await response.json();
+    const data     = await response.data;
 
     return {
       statusCode: 200,
