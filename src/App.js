@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./index.css";
 import "./tailwind.generated.css";
 import { useStorageState } from 'react-storage-hooks';
 import Block from "./Block";
@@ -16,14 +17,11 @@ function App() {
   );
 
   useEffect(() => {
-    var config = {
-      headers: { "Access-Control-Allow-Origin": "*" },
-    };
+
 
     const fetchData = async () => {
       const result = await axios(
-        "https://gallant-chandrasekhar-55ebf7.netlify.app/.netlify/functions/unimi-fetch",
-        config
+        "https://gallant-chandrasekhar-55ebf7.netlify.app/.netlify/functions/unimi-fetch"
       );
 
       setData(result.data);
@@ -49,7 +47,7 @@ function App() {
 
   return (
     <div className="">
-      <div className="w-full px-8 py-6 sticky bg-white z-50 bg-white top-0">
+      <div className="w-full px-8 py-6 sticky bg-white z-50 top-0">
 
         <input
         placeholder="Search..."
@@ -103,7 +101,7 @@ function App() {
 
               >
 
-                <div className="relative border w-full h-full p-4 rounded-lg shadow overflow-hidden z-40">
+                <div className="relative border w-full h-full p-4 rounded-lg shadow overflow-hidden z-40 bg-white">
 
                  { clear(item,true) && <div className="absolute bg-indigo-600 w-6 h-8 z-30 transform rotate-45" style={{ top: '-0.75rem' , left: '-0.75rem'}}></div>}
 

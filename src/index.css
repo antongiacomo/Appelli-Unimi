@@ -5,8 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
+
+
+}
+#root{
+    background: linear-gradient(90deg, white 20px, transparent 1%) center, linear-gradient(white 20px, transparent 1%) center, #cccccc;
+  background-size: 22px 22px;
+
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
